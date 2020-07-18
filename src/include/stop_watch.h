@@ -33,4 +33,6 @@ public:
 private:
     std::chrono::high_resolution_clock::time_point _start;
 };
+
+using default_stop_watch = stop_watch<std::chrono::microseconds>;
 XSTL_NAMESPACE_END

@@ -17,9 +17,13 @@ target_link_libraries(Atest Catch)
 target_link_libraries(Atest xstl)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
-  list(APPEND flags "-std=c++14")
-  target_compile_options(Atest PRIVATE ${flags})
+  list(APPEND cflags "-std=c++14")
+  target_compile_options(Atest PRIVATE ${cflags})
+
+  list(APPEND lflags "-lpthread")
+  target_link_options(Atest PRIVATE ${lflags})
 endif() 
+
 
 set_target_properties(Atest 
         PROPERTIES 
