@@ -16,6 +16,13 @@ add_executable(Atest ${TEST_FILES})
 target_link_libraries(Atest Catch)
 target_link_libraries(Atest xstl)
 
+set_target_properties(Atest 
+        PROPERTIES 
+        CXX_STABDARD 14
+        CXX_EXTENSIONS OFF
+        CXX_STANDARD_REQUIRED ON
+        POSITION_INDEPENDENT_CODE 1)
+
 enable_testing()
 
 add_test(
