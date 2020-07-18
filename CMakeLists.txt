@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(cpp-project-template LANGUAGES CXX)
 
-#add_executable(cpp-project-template helloworld.cpp)
-
-
 set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdParty/Catch2/single_include) 
 add_library(Catch INTERFACE)
 target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})

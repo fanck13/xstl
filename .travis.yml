@@ -1,0 +1,18 @@
+language: cpp
+
+compiler:
+    - clang
+    - gcc
+os:
+    - linux
+
+install:
+    - skip
+
+script:
+    - cd ${TRAVIS_BUILD_DIR}
+    - mkdir -p build
+    - cd build
+    - cmake ..
+    - cmake --build .
+    - ctest -V
