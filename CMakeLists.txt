@@ -16,6 +16,11 @@ add_executable(Atest ${TEST_FILES})
 target_link_libraries(Atest Catch)
 target_link_libraries(Atest xstl)
 
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+  list(APPEND flags "-std=c++14")
+  target_compile_options(Atest PRIVATE ${flags})
+endif() 
+
 set_target_properties(Atest 
         PROPERTIES 
         CXX_STABDARD 14
