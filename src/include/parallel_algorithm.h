@@ -1,6 +1,8 @@
 #pragma once
 
 #include <algorithm>
+#include <thread>
+#include <numeric>
 #include "common.h"
 
 XSTL_NAMESPACE_BEGIN

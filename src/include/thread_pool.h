@@ -20,8 +20,8 @@ class thread_pool
 public:
     thread_pool(size_t _size)
     {
-        auto max_threads = std::hardware_concurrency();
-        auto actual_threads = std::min(_size, max_threads);
+        auto max_threads = std::thread::hardware_concurrency();
+        auto actual_threads = std::min(_size, size_t(max_threads));
         works.reserve(actual_threads);
 
         for(auto i = 0; i < works.capacity(); i++)
