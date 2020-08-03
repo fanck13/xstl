@@ -38,3 +38,25 @@ add_test(
   NAME Sample_test
   COMMAND $<TARGET_FILE:Atest>
 )
+
+file(GLOB BENCH_FILES ${CMAKE_CURRENT_SOURCE_DIR}/bench/*.cpp)
+
+add_executable(Bench ${BENCH_FILES})
+target_link_libraries(Bench Catch)
+target_link_libraries(Bench xstl)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+  list(APPEND cflags "-std=c++14")
+  target_compile_options(Bench PRIVATE ${cflags})
+
+  list(APPEND lflags "-lpthread")
+  target_link_options(Bench PRIVATE ${lflags})
+endif() 
+
+
+set_target_properties(Bench 
+        PROPERTIES 
+        CXX_STABDARD 14
+        CXX_EXTENSIONS OFF
+        CXX_STANDARD_REQUIRED ON
+        POSITION_INDEPENDENT_CODE 1)
