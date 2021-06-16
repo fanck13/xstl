@@ -40,3 +40,5 @@ cmake-build-debug/
 !/3rdParty/benchmark/lib/linux/release/*
 !/3rdParty/benchmark/lib/windows/debug/*
 !/3rdParty/benchmark/lib/windows/release/*
+
+.vs/
